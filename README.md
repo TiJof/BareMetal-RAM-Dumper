@@ -35,9 +35,7 @@ build.bat
 ```
 On Linux, you can run:
 ```bash
-nasm -f bin stage1.asm -o stage1.bin
-nasm -f bin stage2.asm -o stage2.bin
-cat stage1.bin stage2.bin > boot.bin
+cat <(nasm -f bin stage1.asm -o /dev/stdout) <(nasm -f bin stage2.asm -o /dev/stdout) > boot.bin
 ```
 
 ## Usage
